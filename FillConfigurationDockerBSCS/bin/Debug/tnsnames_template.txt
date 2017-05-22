@@ -1,33 +1,33 @@
-bscsdb = 
+<dbName> = 
 (DESCRIPTION=
   (SDU=8192)
   (ADDRESS_LIST=
       (ADDRESS=
         (COMMUNITY=TCPCOM)
         (PROTOCOL=TCP)
-        (Host=rocker.lhs-systems.com)
-        (Port=33414)
+        (Host=<dbHost>)
+        (Port=<dbPort>)
       )
   )
   (CONNECT_DATA=
-     (SID=bscsdb)
-     (GLOBAL_NAME=bscsdb)
+     (SID=<dbName>)
+     (GLOBAL_NAME=<dbName>)
   )
 )
 
-bscsdb.world = 
+<dbName>.world = 
 (DESCRIPTION=
   (SDU=8192)
   (ADDRESS_LIST=
       (ADDRESS=
         (COMMUNITY=TCPCOM)
         (PROTOCOL=TCP)
-        (Host=rocker.lhs-systems.com)
-        (Port=33414)
+        (Host=<dbHost>)
+        (Port=<dbPort>)
       )
   )
   (CONNECT_DATA=
-     (SID=bscsdb)
-     (GLOBAL_NAME=bscsdb.world)
+     (SID=<dbName>)
+     (GLOBAL_NAME=<dbName>.world)
   )
 )

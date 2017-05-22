@@ -14,7 +14,7 @@ namespace FillConfigurationDockerBSCS
 {
     public partial class Form1 : Form
     {
-
+        Variable oConfiguraFile = new Variable();
         public const string variable = "variable";
         public const string tsnName = "tsnName";
         public const string soapUI = "soapUI";
@@ -27,24 +27,7 @@ namespace FillConfigurationDockerBSCS
         }
 
 
-        public void lerHtmlDocker()
-        {
-            WebRequest request = WebRequest.Create("https://www.youtube.com/results?search_query=123");
-            request.Credentials = CredentialCache.DefaultCredentials;
-            WebResponse response = request.GetResponse();
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-
-            // Read the content.
-            string responseFromServer = reader.ReadToEnd();
-
-
-            lblVariable.Text = responseFromServer;
-            // Display the content.
-           // Console.WriteLine(responseFromServer);
-            response.Close();
-        }
-
+       
         private void btnVariable_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -57,7 +40,14 @@ namespace FillConfigurationDockerBSCS
             }
             else
             {
-                MessageBox.Show("Choose file Variables.py path", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (textBox1.Text != string.Empty)
+                {
+                    //To do nothing here
+                }
+                else
+                {
+                    MessageBox.Show("Choose file Variables.py path", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
 
         }
@@ -84,7 +74,15 @@ namespace FillConfigurationDockerBSCS
             }
             else
             {
-                MessageBox.Show("Choose file tnsName.ora path", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (txtTnsName.Text != string.Empty)
+                {
+                    //To do nothing here
+                }
+                else
+                {
+                    MessageBox.Show("Choose file tnsName.ora path", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+               
             }
         }
 
@@ -105,32 +103,7 @@ namespace FillConfigurationDockerBSCS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string urlAddress = "http://bolaoguaty.somee.com";
-
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                Stream receiveStream = response.GetResponseStream();
-                StreamReader readStream = null;
-
-                if (response.CharacterSet == null)
-                {
-                    readStream = new StreamReader(receiveStream);
-                }
-                else
-                {
-                    readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet));
-                }
-
-                string data = readStream.ReadToEnd();
-
-                response.Close();
-                readStream.Close();
-            }
-
-
+           
 
         }
 
@@ -156,7 +129,14 @@ namespace FillConfigurationDockerBSCS
             }
             else
             {
-                MessageBox.Show("Choose file SOAPUI.properties path", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (txtSoapUi.Text != string.Empty)
+                {
+                    //To do nothing here
+                }
+                else
+                {
+                    MessageBox.Show("Choose file SOAPUI.properties path", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -172,10 +152,21 @@ namespace FillConfigurationDockerBSCS
 
         private void btnReplaceFiles_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != string.Empty && txtTnsName.Text != string.Empty && txtSoapUi.Text != string.Empty)
+
+            string[] nomeFileVariable = textBox1.Text.Split('\\');
+            string[] nomeFileTsnName = txtTnsName.Text.Split('\\');
+            string[] nomeFileSoap = txtSoapUi.Text.Split('\\');
+
+            if (!(nomeFileVariable[nomeFileVariable.Length -1] == "variables.py" && nomeFileTsnName[nomeFileTsnName.Length-1] == "tnsnames.ora" && nomeFileSoap[nomeFileSoap.Length-1] == "soapui.properties"))
+            {
+
+                MessageBox.Show("File name wrong, please to check file name choosen (variable,tsnames and soapui)  !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if(textBox1.Text != string.Empty && txtTnsName.Text != string.Empty && txtSoapUi.Text != string.Empty && textBox4.Text != string.Empty && 
+                txtSoapUiPath.Text != string.Empty && txtOnlinePath.Text != string.Empty)
             {
                 FileConfig oFiles = new FileConfig();
-                Variable oConfiguraFile = new Variable();
+             
                 oFiles.fileNameVariable = variable;
                 oFiles.filePathVariable = textBox1.Text;
 
@@ -188,7 +179,12 @@ namespace FillConfigurationDockerBSCS
 
 
 
-                oConfiguraFile.ReplaceAllFiles(oFiles);
+               bool validaReplace =  oConfiguraFile.ReplaceAllFiles(oFiles, textBox4.Text.Trim(), txtSoapUiPath.Text.Trim(), txtOnlinePath.Text.Trim());
+
+                if (validaReplace)
+                {
+                    MessageBox.Show("All file were replaced successuflly!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
             }
             else
@@ -199,7 +195,72 @@ namespace FillConfigurationDockerBSCS
 
         private void btnClearData_Click(object sender, EventArgs e)
         {
+            txtHostUnix.Text = string.Empty;
+            txtUnixUser.Text = string.Empty;
+            txtUnixPassword.Text = string.Empty;
+            txtSshPort.Text = string.Empty;
+            txtDbUser.Text = string.Empty;
+            txtDatabaseHost.Text = string.Empty;
+            txtDbName.Text = string.Empty;
+            txtDbPort.Text = string.Empty;
+            TxtDbPwd.Text = string.Empty;
+            textBox4.Text = string.Empty;
+            txtTnsName.Text = string.Empty;
+            txtSoapUi.Text = string.Empty;
+            textBox1.Text = string.Empty;
+            
+        }
 
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_Leave(object sender, EventArgs e)
+        {
+
+            try
+            {
+                oConfiguraFile = oConfiguraFile.loadInfoDocker(textBox4.Text.Trim());
+                txtHostUnix.Text = oConfiguraFile.hostUrl;
+                txtUnixUser.Text = oConfiguraFile.unixUser.Split('@')[0];
+                txtUnixPassword.Text = oConfiguraFile.unixPass;
+                txtSshPort.Text = oConfiguraFile.sshPort;
+                txtDbUser.Text = oConfiguraFile.dbUser;
+                txtDatabaseHost.Text = oConfiguraFile.dbHost;
+                txtDbName.Text = oConfiguraFile.dbName;
+                txtDbPort.Text = oConfiguraFile.dbPort;
+                TxtDbPwd.Text = oConfiguraFile.dbPassword;
+
+
+                txtWebServicePort.Text = oConfiguraFile.webServicesPort;
+                txtWbClientPort.Text = oConfiguraFile.webClientsPort;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+
+
+          
+        }
+
+        private void btnDownloadVariable_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK) // Test result.
+            {
+                int count = 0;
+                string[] FilenameName;
+                foreach (string item in openFileDialog1.FileNames)
+                {
+                    FilenameName = item.Split('\\');
+                    File.Copy(item, @"C:\Users\samer\Desktop\Files\" + FilenameName[FilenameName.Length - 1]);
+                    count++;
+                }
+            }
         }
     }
 }

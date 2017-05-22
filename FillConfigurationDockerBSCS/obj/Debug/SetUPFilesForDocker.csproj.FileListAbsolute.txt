@@ -6,3 +6,16 @@ C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS
 C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\obj\Debug\SetUPFilesForDocker.csproj.GenerateResource.Cache
 C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.exe
 C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.pdb
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.exe.config
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.exe
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.pdb
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\SetUPFilesForDocker.csprojResolveAssemblyReference.cache
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.Form1.resources
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.Properties.Resources.resources
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\SetUPFilesForDocker.csproj.GenerateResource.Cache
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.exe
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.pdb
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.exe.manifest
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.application
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.exe.manifest
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.application

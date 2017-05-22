@@ -32,7 +32,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lblVariable = new System.Windows.Forms.Label();
-            this.btnVariable = new System.Windows.Forms.Button();
             this.btnTsnName = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTnsName = new System.Windows.Forms.TextBox();
@@ -73,11 +72,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtHostUnix = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txtWatch = new System.Windows.Forms.TextBox();
             this.lblUserRede = new System.Windows.Forms.Label();
             this.lblHostname = new System.Windows.Forms.Label();
+            this.btnVariable = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -109,17 +108,6 @@
             this.lblVariable.TabIndex = 1;
             this.lblVariable.Text = "Variables.py file path";
             this.lblVariable.Click += new System.EventHandler(this.lblVariable_Click);
-            // 
-            // btnVariable
-            // 
-            this.btnVariable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVariable.Location = new System.Drawing.Point(884, 52);
-            this.btnVariable.Name = "btnVariable";
-            this.btnVariable.Size = new System.Drawing.Size(199, 26);
-            this.btnVariable.TabIndex = 2;
-            this.btnVariable.Text = "search file variable.py";
-            this.btnVariable.UseVisualStyleBackColor = true;
-            this.btnVariable.Click += new System.EventHandler(this.btnVariable_Click);
             // 
             // btnTsnName
             // 
@@ -170,9 +158,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 22);
+            this.label2.Size = new System.Drawing.Size(219, 22);
             this.label2.TabIndex = 7;
-            this.label2.Text = "SoapUI file path";
+            this.label2.Text = "Soapui.properties file path";
             // 
             // txtSoapUi
             // 
@@ -195,13 +183,14 @@
             this.groupBox1.Controls.Add(this.txtTnsName);
             this.groupBox1.Controls.Add(this.btnTsnName);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 21);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1103, 229);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "1º - Config Files";
+            this.groupBox1.Text = "1º - Configure File path to the Robot";
             // 
             // groupBox2
             // 
@@ -212,11 +201,10 @@
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 264);
+            this.groupBox2.Location = new System.Drawing.Point(12, 247);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1103, 465);
+            this.groupBox2.Size = new System.Drawing.Size(1103, 446);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "2º - Coreloop URL - Enviromment";
@@ -225,7 +213,7 @@
             // btnClearData
             // 
             this.btnClearData.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnClearData.Location = new System.Drawing.Point(801, 404);
+            this.btnClearData.Location = new System.Drawing.Point(795, 264);
             this.btnClearData.Name = "btnClearData";
             this.btnClearData.Size = new System.Drawing.Size(221, 31);
             this.btnClearData.TabIndex = 31;
@@ -236,9 +224,9 @@
             // btnReplaceFiles
             // 
             this.btnReplaceFiles.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnReplaceFiles.Location = new System.Drawing.Point(801, 346);
+            this.btnReplaceFiles.Location = new System.Drawing.Point(795, 181);
             this.btnReplaceFiles.Name = "btnReplaceFiles";
-            this.btnReplaceFiles.Size = new System.Drawing.Size(229, 31);
+            this.btnReplaceFiles.Size = new System.Drawing.Size(229, 56);
             this.btnReplaceFiles.TabIndex = 30;
             this.btnReplaceFiles.Text = "3º - Set up environment";
             this.btnReplaceFiles.UseVisualStyleBackColor = false;
@@ -246,7 +234,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.txtWebServicePort);
             this.groupBox5.Controls.Add(this.label14);
@@ -255,9 +243,9 @@
             this.groupBox5.Controls.Add(this.txtWbClientPort);
             this.groupBox5.Controls.Add(this.label16);
             this.groupBox5.Controls.Add(this.txtSoapUiPath);
-            this.groupBox5.Location = new System.Drawing.Point(16, 290);
+            this.groupBox5.Location = new System.Drawing.Point(6, 276);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(465, 161);
+            this.groupBox5.Size = new System.Drawing.Size(451, 161);
             this.groupBox5.TabIndex = 25;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Info - Geral";
@@ -276,10 +264,10 @@
             // 
             this.txtWebServicePort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWebServicePort.Enabled = false;
-            this.txtWebServicePort.Location = new System.Drawing.Point(317, 104);
+            this.txtWebServicePort.Location = new System.Drawing.Point(328, 104);
             this.txtWebServicePort.Name = "txtWebServicePort";
             this.txtWebServicePort.ReadOnly = true;
-            this.txtWebServicePort.Size = new System.Drawing.Size(125, 23);
+            this.txtWebServicePort.Size = new System.Drawing.Size(80, 23);
             this.txtWebServicePort.TabIndex = 28;
             // 
             // label14
@@ -316,10 +304,10 @@
             // 
             this.txtWbClientPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWbClientPort.Enabled = false;
-            this.txtWbClientPort.Location = new System.Drawing.Point(317, 49);
+            this.txtWbClientPort.Location = new System.Drawing.Point(328, 49);
             this.txtWbClientPort.Name = "txtWbClientPort";
             this.txtWbClientPort.ReadOnly = true;
-            this.txtWbClientPort.Size = new System.Drawing.Size(125, 23);
+            this.txtWbClientPort.Size = new System.Drawing.Size(81, 23);
             this.txtWbClientPort.TabIndex = 24;
             // 
             // label16
@@ -343,7 +331,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.TxtDbPwd);
             this.groupBox4.Controls.Add(this.label7);
@@ -354,9 +342,9 @@
             this.groupBox4.Controls.Add(this.txtDbName);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.txtDatabaseHost);
-            this.groupBox4.Location = new System.Drawing.Point(16, 184);
+            this.groupBox4.Location = new System.Drawing.Point(6, 170);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(783, 100);
+            this.groupBox4.Size = new System.Drawing.Size(648, 100);
             this.groupBox4.TabIndex = 24;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Info - Database Server";
@@ -365,7 +353,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(648, 31);
+            this.label11.Location = new System.Drawing.Point(545, 31);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 15);
             this.label11.TabIndex = 25;
@@ -375,7 +363,7 @@
             // 
             this.TxtDbPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtDbPwd.Enabled = false;
-            this.TxtDbPwd.Location = new System.Drawing.Point(646, 49);
+            this.TxtDbPwd.Location = new System.Drawing.Point(543, 49);
             this.TxtDbPwd.Name = "TxtDbPwd";
             this.TxtDbPwd.ReadOnly = true;
             this.TxtDbPwd.Size = new System.Drawing.Size(94, 23);
@@ -385,7 +373,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(550, 31);
+            this.label7.Location = new System.Drawing.Point(447, 31);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 15);
             this.label7.TabIndex = 23;
@@ -395,7 +383,7 @@
             // 
             this.txtDbUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDbUser.Enabled = false;
-            this.txtDbUser.Location = new System.Drawing.Point(548, 49);
+            this.txtDbUser.Location = new System.Drawing.Point(445, 49);
             this.txtDbUser.Name = "txtDbUser";
             this.txtDbUser.ReadOnly = true;
             this.txtDbUser.Size = new System.Drawing.Size(81, 23);
@@ -405,7 +393,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(409, 31);
+            this.label8.Location = new System.Drawing.Point(306, 31);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 15);
             this.label8.TabIndex = 21;
@@ -415,7 +403,7 @@
             // 
             this.txtDbPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDbPort.Enabled = false;
-            this.txtDbPort.Location = new System.Drawing.Point(412, 49);
+            this.txtDbPort.Location = new System.Drawing.Point(309, 49);
             this.txtDbPort.Name = "txtDbPort";
             this.txtDbPort.ReadOnly = true;
             this.txtDbPort.Size = new System.Drawing.Size(126, 23);
@@ -425,7 +413,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(314, 31);
+            this.label9.Location = new System.Drawing.Point(211, 31);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 15);
             this.label9.TabIndex = 19;
@@ -435,7 +423,7 @@
             // 
             this.txtDbName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDbName.Enabled = false;
-            this.txtDbName.Location = new System.Drawing.Point(317, 49);
+            this.txtDbName.Location = new System.Drawing.Point(214, 49);
             this.txtDbName.Name = "txtDbName";
             this.txtDbName.ReadOnly = true;
             this.txtDbName.Size = new System.Drawing.Size(77, 23);
@@ -458,12 +446,12 @@
             this.txtDatabaseHost.Location = new System.Drawing.Point(6, 49);
             this.txtDatabaseHost.Name = "txtDatabaseHost";
             this.txtDatabaseHost.ReadOnly = true;
-            this.txtDatabaseHost.Size = new System.Drawing.Size(287, 23);
+            this.txtDatabaseHost.Size = new System.Drawing.Size(202, 23);
             this.txtDatabaseHost.TabIndex = 16;
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.txtSshPort);
             this.groupBox3.Controls.Add(this.label5);
@@ -472,9 +460,9 @@
             this.groupBox3.Controls.Add(this.txtUnixUser);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtHostUnix);
-            this.groupBox3.Location = new System.Drawing.Point(16, 78);
+            this.groupBox3.Location = new System.Drawing.Point(6, 64);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(783, 100);
+            this.groupBox3.Size = new System.Drawing.Size(648, 100);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Info - Unix Server";
@@ -484,7 +472,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(545, 31);
+            this.label6.Location = new System.Drawing.Point(428, 31);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 15);
             this.label6.TabIndex = 23;
@@ -494,17 +482,17 @@
             // 
             this.txtSshPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSshPort.Enabled = false;
-            this.txtSshPort.Location = new System.Drawing.Point(548, 49);
+            this.txtSshPort.Location = new System.Drawing.Point(431, 49);
             this.txtSshPort.Name = "txtSshPort";
             this.txtSshPort.ReadOnly = true;
-            this.txtSshPort.Size = new System.Drawing.Size(81, 23);
+            this.txtSshPort.Size = new System.Drawing.Size(62, 23);
             this.txtSshPort.TabIndex = 22;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(409, 31);
+            this.label5.Location = new System.Drawing.Point(306, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 15);
             this.label5.TabIndex = 21;
@@ -514,17 +502,17 @@
             // 
             this.txtUnixPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUnixPassword.Enabled = false;
-            this.txtUnixPassword.Location = new System.Drawing.Point(412, 49);
+            this.txtUnixPassword.Location = new System.Drawing.Point(309, 49);
             this.txtUnixPassword.Name = "txtUnixPassword";
             this.txtUnixPassword.ReadOnly = true;
-            this.txtUnixPassword.Size = new System.Drawing.Size(126, 23);
+            this.txtUnixPassword.Size = new System.Drawing.Size(99, 23);
             this.txtUnixPassword.TabIndex = 20;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(314, 31);
+            this.label4.Location = new System.Drawing.Point(211, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 15);
             this.label4.TabIndex = 19;
@@ -534,10 +522,10 @@
             // 
             this.txtUnixUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUnixUser.Enabled = false;
-            this.txtUnixUser.Location = new System.Drawing.Point(317, 49);
+            this.txtUnixUser.Location = new System.Drawing.Point(214, 49);
             this.txtUnixUser.Name = "txtUnixUser";
             this.txtUnixUser.ReadOnly = true;
-            this.txtUnixUser.Size = new System.Drawing.Size(77, 23);
+            this.txtUnixUser.Size = new System.Drawing.Size(65, 23);
             this.txtUnixUser.TabIndex = 18;
             // 
             // label3
@@ -557,7 +545,7 @@
             this.txtHostUnix.Location = new System.Drawing.Point(6, 49);
             this.txtHostUnix.Name = "txtHostUnix";
             this.txtHostUnix.ReadOnly = true;
-            this.txtHostUnix.Size = new System.Drawing.Size(287, 23);
+            this.txtHostUnix.Size = new System.Drawing.Size(202, 23);
             this.txtHostUnix.TabIndex = 16;
             // 
             // textBox4
@@ -566,17 +554,8 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(859, 23);
             this.textBox4.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(884, 32);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(199, 26);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Load URL Information";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // timer1
             // 
@@ -612,11 +591,22 @@
             this.lblHostname.TabIndex = 34;
             this.lblHostname.Text = "lblhost";
             // 
+            // btnVariable
+            // 
+            this.btnVariable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVariable.Location = new System.Drawing.Point(884, 52);
+            this.btnVariable.Name = "btnVariable";
+            this.btnVariable.Size = new System.Drawing.Size(199, 26);
+            this.btnVariable.TabIndex = 2;
+            this.btnVariable.Text = "search file variable.py";
+            this.btnVariable.UseVisualStyleBackColor = true;
+            this.btnVariable.Click += new System.EventHandler(this.btnVariable_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1347, 741);
+            this.ClientSize = new System.Drawing.Size(1269, 689);
             this.Controls.Add(this.lblHostname);
             this.Controls.Add(this.lblUserRede);
             this.Controls.Add(this.txtWatch);
@@ -655,7 +645,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSshPort;
