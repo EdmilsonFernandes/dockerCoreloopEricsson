@@ -1,0 +1,9 @@
+C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.exe.config
+C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.exe
+C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.pdb
+C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.Form1.resources
+C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.Properties.Resources.resources
+C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.csproj.GenerateResource.Cache
+C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.exe
+C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.pdb
+C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.csprojResolveAssemblyReference.cache
