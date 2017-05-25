@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
+
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace FillConfigurationDockerBSCS
@@ -24,10 +23,35 @@ namespace FillConfigurationDockerBSCS
             lblUserRede.Text = "UserName: " + Environment.UserName;
             lblHostname.Text = "HostName  " + Environment.MachineName;
             textBox1.TabStop = false;
+            hiddenLinks();
+
+
         }
 
+        public void hiddenLinks()
+        {
+            lnkCX.Visible = false;
+            linkAdmx.Visible = false;
+            linkAX.Visible = false;
+            linkBP.Visible = false;
+            linkDCX.Visible = false;
+            linkWex.Visible = false;
+            linkCPX.Visible = false;
+           
+        }
 
-       
+        public void showLinks()
+        {
+            lnkCX.Visible = true;
+            linkAdmx.Visible = true;
+            linkAX.Visible = true;
+            linkBP.Visible = true;
+            linkDCX.Visible = true;
+            linkWex.Visible = true;
+            linkCPX.Visible = true;
+
+        }
+
         private void btnVariable_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -159,12 +183,16 @@ namespace FillConfigurationDockerBSCS
 
             if (!(nomeFileVariable[nomeFileVariable.Length -1] == "variables.py" && nomeFileTsnName[nomeFileTsnName.Length-1] == "tnsnames.ora" && nomeFileSoap[nomeFileSoap.Length-1] == "soapui.properties"))
             {
+                errorProvider1.SetError(textBox1, "Must be variables.py path");
+                errorProvider1.SetError(txtTnsName, "Must be tnsnames.ora path");
+                errorProvider1.SetError(txtSoapUi, "Must be soapui.properties path");
 
                 MessageBox.Show("File name wrong, please to check file name choosen (variable,tsnames and soapui)  !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if(textBox1.Text != string.Empty && txtTnsName.Text != string.Empty && txtSoapUi.Text != string.Empty && textBox4.Text != string.Empty && 
                 txtSoapUiPath.Text != string.Empty && txtOnlinePath.Text != string.Empty)
             {
+                errorProvider1.Clear();
                 FileConfig oFiles = new FileConfig();
              
                 oFiles.fileNameVariable = variable;
@@ -184,11 +212,19 @@ namespace FillConfigurationDockerBSCS
                 if (validaReplace)
                 {
                     MessageBox.Show("All file were replaced successuflly!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    showLinks();
                 }
 
             }
             else
             {
+                errorProvider1.SetError(textBox1, string.Empty);
+                errorProvider1.SetError(txtTnsName, string.Empty);
+                errorProvider1.SetError(txtSoapUi, string.Empty);
+                if (textBox4.Text == string.Empty)
+                {
+                    errorProvider1.SetError(textBox4, "Please fill the required field");
+                }
                 MessageBox.Show("All file path must be filled", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
@@ -208,6 +244,7 @@ namespace FillConfigurationDockerBSCS
             txtTnsName.Text = string.Empty;
             txtSoapUi.Text = string.Empty;
             textBox1.Text = string.Empty;
+            hiddenLinks();
             
         }
 
@@ -261,6 +298,60 @@ namespace FillConfigurationDockerBSCS
                     count++;
                 }
             }
+        }
+
+        private void lnkCX_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start(Variable.CX_URL);
+
+        }
+
+        private void linkBP_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+           
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start(Variable.BP_URL);
+        }
+
+        private void linkAX_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+          
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start(Variable.AX_URL);
+        }
+
+        private void linkDCX_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+         
+
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start(Variable.DCX_URL);
+        }
+
+        private void linkCPX_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+         
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start(Variable.CPX_URL);
+        }
+
+        private void linkAdmx_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start(Variable.ADMX_URL);
+        }
+
+        private void linkWex_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+          
+
+            // Navigate to a URL.
+            System.Diagnostics.Process.Start(Variable.WEX_URL);
         }
     }
 }

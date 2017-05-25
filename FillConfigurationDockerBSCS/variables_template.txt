@@ -1,6 +1,6 @@
 #General
 DELAY = 0
-SOIVERSION="CIL_7"
+SOIVERSION="CIL_5"
 #Web
 BROWSER = "ff"
 WEBSERVER = "<hostUrl>" 

@@ -9,7 +9,6 @@ C:\Users\edmls\documents\visual studio 2017\Projects\FillConfigurationDockerBSCS
 C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.exe.config
 C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.exe
 C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Debug\FillConfigurationDockerBSCS.pdb
-C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\SetUPFilesForDocker.csprojResolveAssemblyReference.cache
 C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.Form1.resources
 C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\FillConfigurationDockerBSCS.Properties.Resources.resources
 C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Debug\SetUPFilesForDocker.csproj.GenerateResource.Cache

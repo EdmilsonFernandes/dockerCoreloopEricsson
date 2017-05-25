@@ -1,0 +1,12 @@
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Release\FillConfigurationDockerBSCS.exe.config
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Release\FillConfigurationDockerBSCS.exe.manifest
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Release\FillConfigurationDockerBSCS.application
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Release\FillConfigurationDockerBSCS.exe
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\bin\Release\FillConfigurationDockerBSCS.pdb
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\FillConfigurationDockerBSCS.Form1.resources
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\FillConfigurationDockerBSCS.Properties.Resources.resources
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\SetUPFilesForDocker.csproj.GenerateResource.Cache
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\FillConfigurationDockerBSCS.exe.manifest
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\FillConfigurationDockerBSCS.application
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\FillConfigurationDockerBSCS.exe
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\FillConfigurationDockerBSCS.pdb

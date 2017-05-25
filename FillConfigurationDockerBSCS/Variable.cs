@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+
 using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace FillConfigurationDockerBSCS
@@ -30,6 +30,15 @@ namespace FillConfigurationDockerBSCS
         public string webServicesPort { get; set; }
         public string binSoapUiPath { get; set; }
         public string onlineWin32Path { get; set; }
+
+        //URL WEB ERICSSON BSCS
+        public static string BP_URL = "";
+        public static string CX_URL = "";
+        public static string CPX_URL = "";
+        public static string AX_URL = "";
+        public static string ADMX_URL = "";
+        public static string WEX_URL = "";
+        public static string DCX_URL = "";
 
 
         public const string variableTemplate = "variables_template.txt";
@@ -187,6 +196,42 @@ namespace FillConfigurationDockerBSCS
                                    .Replace("<sshPort>", oVariables.sshPort).Replace("<webClientsPort>", oVariables.webClientsPort)
                                    .Replace("<webServicesPort>", oVariables.webServicesPort).Replace("<binSoapUiPath>", oVariables.binSoapUiPath)
                                    .Replace("<onlineWin32Path>", oVariables.onlineWin32Path);
+
+                       if(line.Contains("BP_URL") && BP_URL == string.Empty)
+                        {
+                            BP_URL = line.Replace("BP_URL", "").Replace("=", "").Replace("\"", "").Trim(); 
+
+                        }
+                        else if (line.Contains("CX_URL") && CX_URL == string.Empty)
+                        {
+                            CX_URL = line.Replace("CX_URL", "").Replace("=", "").Replace("\"", "").Trim();
+
+                        }
+                        else if (line.Contains("CPX_URL") && CPX_URL == string.Empty)
+                        {
+                            CPX_URL = line.Replace("CPX_URL", "").Replace("=", "").Replace("\"", "").Trim();
+
+                        }
+                        else if (line.Contains("AX_URL") && AX_URL == string.Empty)
+                        {
+                            AX_URL = line.Replace("AX_URL", "").Replace("=", "").Replace("\"", "").Trim();
+
+                        }
+                        else if (line.Contains("WEX_URL") && WEX_URL == string.Empty)
+                        {
+                            WEX_URL = line.Replace("WEX_URL", "").Replace("=", "").Replace("\"", "").Trim();
+
+                        }
+                        else if (line.Contains("DCX_URL") && DCX_URL == string.Empty)
+                        {
+                            DCX_URL = line.Replace("DCX_URL", "").Replace("=", "").Replace("\"", "").Trim();
+
+                        }
+                        else if (line.Contains("ADMX_URL") && ADMX_URL == string.Empty)
+                        {
+                            ADMX_URL = line.Replace("ADMX_URL", "").Replace("=", "").Replace("\"", "").Trim();
+
+                        }
 
                         output.WriteLine(line);
                     }

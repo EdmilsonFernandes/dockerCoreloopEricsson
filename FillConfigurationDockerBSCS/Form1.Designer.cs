@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSoapUi = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnVariable = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClearData = new System.Windows.Forms.Button();
             this.btnReplaceFiles = new System.Windows.Forms.Button();
@@ -76,12 +77,20 @@
             this.txtWatch = new System.Windows.Forms.TextBox();
             this.lblUserRede = new System.Windows.Forms.Label();
             this.lblHostname = new System.Windows.Forms.Label();
-            this.btnVariable = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lnkCX = new System.Windows.Forms.LinkLabel();
+            this.linkBP = new System.Windows.Forms.LinkLabel();
+            this.linkAX = new System.Windows.Forms.LinkLabel();
+            this.linkDCX = new System.Windows.Forms.LinkLabel();
+            this.linkCPX = new System.Windows.Forms.LinkLabel();
+            this.linkAdmx = new System.Windows.Forms.LinkLabel();
+            this.linkWex = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -112,9 +121,9 @@
             // btnTsnName
             // 
             this.btnTsnName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTsnName.Location = new System.Drawing.Point(884, 115);
+            this.btnTsnName.Location = new System.Drawing.Point(884, 111);
             this.btnTsnName.Name = "btnTsnName";
-            this.btnTsnName.Size = new System.Drawing.Size(199, 26);
+            this.btnTsnName.Size = new System.Drawing.Size(199, 34);
             this.btnTsnName.TabIndex = 5;
             this.btnTsnName.Text = "search file tnsname.ora";
             this.btnTsnName.UseVisualStyleBackColor = true;
@@ -144,9 +153,9 @@
             // btnSoapUI
             // 
             this.btnSoapUI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSoapUI.Location = new System.Drawing.Point(884, 175);
+            this.btnSoapUI.Location = new System.Drawing.Point(884, 170);
             this.btnSoapUI.Name = "btnSoapUI";
-            this.btnSoapUI.Size = new System.Drawing.Size(199, 26);
+            this.btnSoapUI.Size = new System.Drawing.Size(199, 36);
             this.btnSoapUI.TabIndex = 8;
             this.btnSoapUI.Text = "search file soapui";
             this.btnSoapUI.UseVisualStyleBackColor = true;
@@ -184,13 +193,24 @@
             this.groupBox1.Controls.Add(this.btnTsnName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1103, 229);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "1º - Configure File path to the Robot";
+            // 
+            // btnVariable
+            // 
+            this.btnVariable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVariable.Location = new System.Drawing.Point(884, 52);
+            this.btnVariable.Name = "btnVariable";
+            this.btnVariable.Size = new System.Drawing.Size(199, 37);
+            this.btnVariable.TabIndex = 2;
+            this.btnVariable.Text = "search file variable.py";
+            this.btnVariable.UseVisualStyleBackColor = true;
+            this.btnVariable.Click += new System.EventHandler(this.btnVariable_Click);
             // 
             // groupBox2
             // 
@@ -201,7 +221,7 @@
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 247);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1103, 446);
@@ -267,7 +287,7 @@
             this.txtWebServicePort.Location = new System.Drawing.Point(328, 104);
             this.txtWebServicePort.Name = "txtWebServicePort";
             this.txtWebServicePort.ReadOnly = true;
-            this.txtWebServicePort.Size = new System.Drawing.Size(80, 23);
+            this.txtWebServicePort.Size = new System.Drawing.Size(80, 26);
             this.txtWebServicePort.TabIndex = 28;
             // 
             // label14
@@ -286,7 +306,7 @@
             this.txtOnlinePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOnlinePath.Location = new System.Drawing.Point(6, 104);
             this.txtOnlinePath.Name = "txtOnlinePath";
-            this.txtOnlinePath.Size = new System.Drawing.Size(287, 23);
+            this.txtOnlinePath.Size = new System.Drawing.Size(287, 26);
             this.txtOnlinePath.TabIndex = 26;
             this.txtOnlinePath.Text = "H:\\AMX Online\\bin\\win32";
             // 
@@ -307,7 +327,7 @@
             this.txtWbClientPort.Location = new System.Drawing.Point(328, 49);
             this.txtWbClientPort.Name = "txtWbClientPort";
             this.txtWbClientPort.ReadOnly = true;
-            this.txtWbClientPort.Size = new System.Drawing.Size(81, 23);
+            this.txtWbClientPort.Size = new System.Drawing.Size(81, 26);
             this.txtWbClientPort.TabIndex = 24;
             // 
             // label16
@@ -325,7 +345,7 @@
             this.txtSoapUiPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSoapUiPath.Location = new System.Drawing.Point(6, 49);
             this.txtSoapUiPath.Name = "txtSoapUiPath";
-            this.txtSoapUiPath.Size = new System.Drawing.Size(287, 23);
+            this.txtSoapUiPath.Size = new System.Drawing.Size(287, 26);
             this.txtSoapUiPath.TabIndex = 16;
             this.txtSoapUiPath.Text = "H:/SoapUI5/bin/";
             // 
@@ -366,7 +386,7 @@
             this.TxtDbPwd.Location = new System.Drawing.Point(543, 49);
             this.TxtDbPwd.Name = "TxtDbPwd";
             this.TxtDbPwd.ReadOnly = true;
-            this.TxtDbPwd.Size = new System.Drawing.Size(94, 23);
+            this.TxtDbPwd.Size = new System.Drawing.Size(94, 26);
             this.TxtDbPwd.TabIndex = 24;
             // 
             // label7
@@ -386,7 +406,7 @@
             this.txtDbUser.Location = new System.Drawing.Point(445, 49);
             this.txtDbUser.Name = "txtDbUser";
             this.txtDbUser.ReadOnly = true;
-            this.txtDbUser.Size = new System.Drawing.Size(81, 23);
+            this.txtDbUser.Size = new System.Drawing.Size(81, 26);
             this.txtDbUser.TabIndex = 22;
             // 
             // label8
@@ -406,7 +426,7 @@
             this.txtDbPort.Location = new System.Drawing.Point(309, 49);
             this.txtDbPort.Name = "txtDbPort";
             this.txtDbPort.ReadOnly = true;
-            this.txtDbPort.Size = new System.Drawing.Size(126, 23);
+            this.txtDbPort.Size = new System.Drawing.Size(126, 26);
             this.txtDbPort.TabIndex = 20;
             // 
             // label9
@@ -426,7 +446,7 @@
             this.txtDbName.Location = new System.Drawing.Point(214, 49);
             this.txtDbName.Name = "txtDbName";
             this.txtDbName.ReadOnly = true;
-            this.txtDbName.Size = new System.Drawing.Size(77, 23);
+            this.txtDbName.Size = new System.Drawing.Size(77, 26);
             this.txtDbName.TabIndex = 18;
             // 
             // label10
@@ -446,7 +466,7 @@
             this.txtDatabaseHost.Location = new System.Drawing.Point(6, 49);
             this.txtDatabaseHost.Name = "txtDatabaseHost";
             this.txtDatabaseHost.ReadOnly = true;
-            this.txtDatabaseHost.Size = new System.Drawing.Size(202, 23);
+            this.txtDatabaseHost.Size = new System.Drawing.Size(202, 26);
             this.txtDatabaseHost.TabIndex = 16;
             // 
             // groupBox3
@@ -485,7 +505,7 @@
             this.txtSshPort.Location = new System.Drawing.Point(431, 49);
             this.txtSshPort.Name = "txtSshPort";
             this.txtSshPort.ReadOnly = true;
-            this.txtSshPort.Size = new System.Drawing.Size(62, 23);
+            this.txtSshPort.Size = new System.Drawing.Size(62, 26);
             this.txtSshPort.TabIndex = 22;
             // 
             // label5
@@ -505,7 +525,7 @@
             this.txtUnixPassword.Location = new System.Drawing.Point(309, 49);
             this.txtUnixPassword.Name = "txtUnixPassword";
             this.txtUnixPassword.ReadOnly = true;
-            this.txtUnixPassword.Size = new System.Drawing.Size(99, 23);
+            this.txtUnixPassword.Size = new System.Drawing.Size(99, 26);
             this.txtUnixPassword.TabIndex = 20;
             // 
             // label4
@@ -525,7 +545,7 @@
             this.txtUnixUser.Location = new System.Drawing.Point(214, 49);
             this.txtUnixUser.Name = "txtUnixUser";
             this.txtUnixUser.ReadOnly = true;
-            this.txtUnixUser.Size = new System.Drawing.Size(65, 23);
+            this.txtUnixUser.Size = new System.Drawing.Size(65, 26);
             this.txtUnixUser.TabIndex = 18;
             // 
             // label3
@@ -545,14 +565,14 @@
             this.txtHostUnix.Location = new System.Drawing.Point(6, 49);
             this.txtHostUnix.Name = "txtHostUnix";
             this.txtHostUnix.ReadOnly = true;
-            this.txtHostUnix.Size = new System.Drawing.Size(202, 23);
+            this.txtHostUnix.Size = new System.Drawing.Size(202, 26);
             this.txtHostUnix.TabIndex = 16;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(6, 35);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(859, 23);
+            this.textBox4.Size = new System.Drawing.Size(859, 26);
             this.textBox4.TabIndex = 0;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
@@ -591,22 +611,100 @@
             this.lblHostname.TabIndex = 34;
             this.lblHostname.Text = "lblhost";
             // 
-            // btnVariable
+            // errorProvider1
             // 
-            this.btnVariable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVariable.Location = new System.Drawing.Point(884, 52);
-            this.btnVariable.Name = "btnVariable";
-            this.btnVariable.Size = new System.Drawing.Size(199, 26);
-            this.btnVariable.TabIndex = 2;
-            this.btnVariable.Text = "search file variable.py";
-            this.btnVariable.UseVisualStyleBackColor = true;
-            this.btnVariable.Click += new System.EventHandler(this.btnVariable_Click);
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // lnkCX
+            // 
+            this.lnkCX.AutoSize = true;
+            this.lnkCX.Location = new System.Drawing.Point(1121, 123);
+            this.lnkCX.Name = "lnkCX";
+            this.lnkCX.Size = new System.Drawing.Size(76, 13);
+            this.lnkCX.TabIndex = 36;
+            this.lnkCX.TabStop = true;
+            this.lnkCX.Text = "Open CX Web";
+            this.lnkCX.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkCX_LinkClicked);
+            // 
+            // linkBP
+            // 
+            this.linkBP.AutoSize = true;
+            this.linkBP.Location = new System.Drawing.Point(1121, 152);
+            this.linkBP.Name = "linkBP";
+            this.linkBP.Size = new System.Drawing.Size(76, 13);
+            this.linkBP.TabIndex = 37;
+            this.linkBP.TabStop = true;
+            this.linkBP.Text = "Open BP Web";
+            this.linkBP.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkBP_LinkClicked);
+            // 
+            // linkAX
+            // 
+            this.linkAX.AutoSize = true;
+            this.linkAX.Location = new System.Drawing.Point(1121, 178);
+            this.linkAX.Name = "linkAX";
+            this.linkAX.Size = new System.Drawing.Size(76, 13);
+            this.linkAX.TabIndex = 38;
+            this.linkAX.TabStop = true;
+            this.linkAX.Text = "Open AX Web";
+            this.linkAX.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAX_LinkClicked);
+            // 
+            // linkDCX
+            // 
+            this.linkDCX.AutoSize = true;
+            this.linkDCX.Location = new System.Drawing.Point(1121, 205);
+            this.linkDCX.Name = "linkDCX";
+            this.linkDCX.Size = new System.Drawing.Size(84, 13);
+            this.linkDCX.TabIndex = 39;
+            this.linkDCX.TabStop = true;
+            this.linkDCX.Text = "Open DCX Web";
+            this.linkDCX.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkDCX_LinkClicked);
+            // 
+            // linkCPX
+            // 
+            this.linkCPX.AutoSize = true;
+            this.linkCPX.Location = new System.Drawing.Point(1121, 232);
+            this.linkCPX.Name = "linkCPX";
+            this.linkCPX.Size = new System.Drawing.Size(83, 13);
+            this.linkCPX.TabIndex = 40;
+            this.linkCPX.TabStop = true;
+            this.linkCPX.Text = "Open CPX Web";
+            this.linkCPX.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCPX_LinkClicked);
+            // 
+            // linkAdmx
+            // 
+            this.linkAdmx.AutoSize = true;
+            this.linkAdmx.Location = new System.Drawing.Point(1121, 255);
+            this.linkAdmx.Name = "linkAdmx";
+            this.linkAdmx.Size = new System.Drawing.Size(93, 13);
+            this.linkAdmx.TabIndex = 41;
+            this.linkAdmx.TabStop = true;
+            this.linkAdmx.Text = "Open ADMX Web";
+            this.linkAdmx.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAdmx_LinkClicked);
+            // 
+            // linkWex
+            // 
+            this.linkWex.AutoSize = true;
+            this.linkWex.Location = new System.Drawing.Point(1121, 284);
+            this.linkWex.Name = "linkWex";
+            this.linkWex.Size = new System.Drawing.Size(87, 13);
+            this.linkWex.TabIndex = 42;
+            this.linkWex.TabStop = true;
+            this.linkWex.Text = "Open WEX Web";
+            this.linkWex.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWex_LinkClicked);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(1269, 689);
+            this.Controls.Add(this.linkWex);
+            this.Controls.Add(this.linkAdmx);
+            this.Controls.Add(this.linkCPX);
+            this.Controls.Add(this.linkDCX);
+            this.Controls.Add(this.linkAX);
+            this.Controls.Add(this.linkBP);
+            this.Controls.Add(this.lnkCX);
             this.Controls.Add(this.lblHostname);
             this.Controls.Add(this.lblUserRede);
             this.Controls.Add(this.txtWatch);
@@ -625,6 +723,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -680,6 +779,14 @@
         private System.Windows.Forms.TextBox txtWatch;
         private System.Windows.Forms.Label lblUserRede;
         private System.Windows.Forms.Label lblHostname;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.LinkLabel linkCPX;
+        private System.Windows.Forms.LinkLabel linkDCX;
+        private System.Windows.Forms.LinkLabel linkAX;
+        private System.Windows.Forms.LinkLabel linkBP;
+        private System.Windows.Forms.LinkLabel lnkCX;
+        private System.Windows.Forms.LinkLabel linkWex;
+        private System.Windows.Forms.LinkLabel linkAdmx;
     }
 }
 
