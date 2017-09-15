@@ -1,0 +1,9 @@
+endpoint=http://<hostUrl>:<webServicesPort>
+dbUser=<dbUser>
+dbName=<dbName>
+dbPassword=<dbPassword>
+dbPortNumber=<dbPort>
+dbDriverType=thin
+dbServerName=<dbHost>
+funLib=C:/Robot/gitViews/robotScripts/src/main/testcases/3__mainTests/webService/funlib/funLib.xml
+testLib=C:/Robot/gitViews/robotScripts/src/main/testcases/3__mainTests/webService/funlib

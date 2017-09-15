@@ -181,51 +181,65 @@ namespace FillConfigurationDockerBSCS
             string[] nomeFileTsnName = txtTnsName.Text.Split('\\');
             string[] nomeFileSoap = txtSoapUi.Text.Split('\\');
 
-            if (!(nomeFileVariable[nomeFileVariable.Length -1] == "variables.py" && nomeFileTsnName[nomeFileTsnName.Length-1] == "tnsnames.ora" && nomeFileSoap[nomeFileSoap.Length-1] == "soapui.properties"))
+
+            if (chkNotUsed.Checked == false || chkSoap.Checked == false || chkTns.Checked == false)
             {
-                errorProvider1.SetError(textBox1, "Must be variables.py path");
-                errorProvider1.SetError(txtTnsName, "Must be tnsnames.ora path");
-                errorProvider1.SetError(txtSoapUi, "Must be soapui.properties path");
 
-                MessageBox.Show("File name wrong, please to check file name choosen (variable,tsnames and soapui)  !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else if(textBox1.Text != string.Empty && txtTnsName.Text != string.Empty && txtSoapUi.Text != string.Empty && textBox4.Text != string.Empty && 
-                txtSoapUiPath.Text != string.Empty && txtOnlinePath.Text != string.Empty)
-            {
-                errorProvider1.Clear();
-                FileConfig oFiles = new FileConfig();
-             
-                oFiles.fileNameVariable = variable;
-                oFiles.filePathVariable = textBox1.Text;
-
-                oFiles.fileNameTsn = tsnName;
-                oFiles.filePathTsn = txtTnsName.Text;
-
-                oFiles.fileNameSoap = soapUI;
-                oFiles.filePathSoap = txtSoapUi.Text;
-
-
-
-
-               bool validaReplace =  oConfiguraFile.ReplaceAllFiles(oFiles, textBox4.Text.Trim(), txtSoapUiPath.Text.Trim(), txtOnlinePath.Text.Trim());
-
-                if (validaReplace)
+                if (!(nomeFileVariable[nomeFileVariable.Length - 1] == "variables.py" && nomeFileTsnName[nomeFileTsnName.Length - 1] == "tnsnames.ora" && nomeFileSoap[nomeFileSoap.Length - 1] == "soapui.properties"))
                 {
-                    MessageBox.Show("All file were replaced successuflly!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    showLinks();
-                }
+                    errorProvider1.SetError(textBox1, "Must be variables.py path");
+                    errorProvider1.SetError(txtTnsName, "Must be tnsnames.ora path");
+                    errorProvider1.SetError(txtSoapUi, "Must be soapui.properties path");
 
+                    MessageBox.Show("File name wrong, please to check file name choosen (variable,tsnames and soapui)  !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (textBox1.Text != string.Empty && txtTnsName.Text != string.Empty && txtSoapUi.Text != string.Empty && textBox4.Text != string.Empty &&
+                    txtSoapUiPath.Text != string.Empty && txtOnlinePath.Text != string.Empty)
+                {
+                    errorProvider1.Clear();
+                    FileConfig oFiles = new FileConfig();
+
+                    oFiles.fileNameVariable = variable;
+                    oFiles.filePathVariable = textBox1.Text;
+
+                    oFiles.fileNameTsn = tsnName;
+                    oFiles.filePathTsn = txtTnsName.Text;
+
+                    oFiles.fileNameSoap = soapUI;
+                    oFiles.filePathSoap = txtSoapUi.Text;
+
+                    bool validaReplace = false;
+
+
+
+                    validaReplace = oConfiguraFile.ReplaceAllFiles(oFiles, textBox4.Text.Trim(), txtSoapUiPath.Text.Trim(), txtOnlinePath.Text.Trim(),chkSoap.Checked,chkNotUsed.Checked,chkTns.Checked);
+
+
+
+                    if (validaReplace)
+                    {
+                        MessageBox.Show("All file were replaced successuflly!!!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        showLinks();
+                    }
+
+                }
+                else
+                {
+                    errorProvider1.SetError(textBox1, string.Empty);
+                    errorProvider1.SetError(txtTnsName, string.Empty);
+                    errorProvider1.SetError(txtSoapUi, string.Empty);
+                    if (textBox4.Text == string.Empty)
+                    {
+                        errorProvider1.SetError(textBox4, "Please fill the required field");
+                    }
+                    MessageBox.Show("All file path must be filled", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+                }
             }
             else
             {
-                errorProvider1.SetError(textBox1, string.Empty);
-                errorProvider1.SetError(txtTnsName, string.Empty);
-                errorProvider1.SetError(txtSoapUi, string.Empty);
-                if (textBox4.Text == string.Empty)
-                {
-                    errorProvider1.SetError(textBox4, "Please fill the required field");
-                }
-                MessageBox.Show("All file path must be filled", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Please choose at least one file for replace!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

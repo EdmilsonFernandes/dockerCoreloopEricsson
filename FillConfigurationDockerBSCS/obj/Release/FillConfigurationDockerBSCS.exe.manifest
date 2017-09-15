@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FillConfigurationDockerBSCS.exe" size="1293248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FillConfigurationDockerBSCS.exe" size="1294272">
       <assemblyIdentity name="FillConfigurationDockerBSCS" version="1.1.1.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>JTWU7WY8nNSP4i1oQbGqkGLTz0I=</dsig:DigestValue>
+        <dsig:DigestValue>5YJXEq8NI7wBg2N3TAhQw5M3ncg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -96,7 +96,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>e7BF/sGzU8VQvy1AhglOaRl3UOw=</dsig:DigestValue>
+      <dsig:DigestValue>CgrmYeGrZsGfxBpFddHHGDc+bB0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

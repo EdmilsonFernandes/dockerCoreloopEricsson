@@ -59,10 +59,16 @@ namespace FillConfigurationDockerBSCS
 
                 string str = "";
                 string finalString = "";
+                int index = 0;
                 while (str != null)
                 {
+                    if (index == 9)
+                        break;
+                   
                     finalString = finalString + str;
                     str = reader.ReadLine();
+                    
+                    index++;
                 }
                 response.Close();
                 RegexOptions options = RegexOptions.None;
@@ -70,6 +76,7 @@ namespace FillConfigurationDockerBSCS
 
 
                 finalString = finalString.Replace("<pre>Runtime environment details---------------------------", "");
+                finalString = finalString.Replace("Additional port:", "");
                 finalString = finalString.Replace("Database name, server, port:", "").Replace("Server name:", "").Replace("Web services port:", "").Replace("Web clients port:", "");
                 finalString = finalString.Replace("SSH access to CBIO container (password=test): ssh", "").Replace("</pre>", "").Replace("-p", "").Replace(",", "");
                 finalString = regex.Replace(finalString, " ");
@@ -85,8 +92,8 @@ namespace FillConfigurationDockerBSCS
                 oVariablesLoad.hostUrl = infoServerBySpace[3];
                 oVariablesLoad.webServicesPort = infoServerBySpace[4];
                 oVariablesLoad.webClientsPort = infoServerBySpace[5];
-                oVariablesLoad.unixUser = infoServerBySpace[6];
-                oVariablesLoad.sshPort = infoServerBySpace[7];
+                oVariablesLoad.unixUser = infoServerBySpace[7];
+                oVariablesLoad.sshPort = infoServerBySpace[8];
                 oVariablesLoad.unixPass = "test";
 
                 
@@ -100,7 +107,7 @@ namespace FillConfigurationDockerBSCS
 
 
         }
-        public bool ReplaceAllFiles(FileConfig oFile, string urlDocker, string onlinePath, string binSoapUiPAth)
+        public bool ReplaceAllFiles(FileConfig oFile, string urlDocker, string onlinePath, string binSoapUiPAth, bool soapFileUserCheck, bool variableFileCheck, bool tnsFileCheck)
         {
             bool checkVariable = false;
             bool checkSoap = false;
@@ -126,6 +133,7 @@ namespace FillConfigurationDockerBSCS
 
 
                 finalString = finalString.Replace("<pre>Runtime environment details---------------------------", "");
+                finalString = finalString.Replace("Additional port:", "");
                 finalString = finalString.Replace("Database name, server, port:", "").Replace("Server name:", "").Replace("Web services port:", "").Replace("Web clients port:", "");
                 finalString = finalString.Replace("SSH access to CBIO container (password=test): ssh", "").Replace("</pre>", "").Replace("-p", "").Replace(",", "");
                 finalString = regex.Replace(finalString, " ");
@@ -150,9 +158,14 @@ namespace FillConfigurationDockerBSCS
                 oVariablesLoad.tnsnamesPath = oFile.filePathTsn;
                 oVariablesLoad.soapPath = oFile.filePathSoap;
 
-                 checkVariable = replaceByFile(oFile.filePathVariable, variableTemplate, oVariablesLoad);
-                 checkSoap = replaceByFile(oFile.filePathSoap, soapui_template, oVariablesLoad);
-                 checkTsn = replaceByFile(oFile.filePathTsn, tnsnames_template, oVariablesLoad);
+                if(variableFileCheck == false)
+                    checkVariable = replaceByFile(oFile.filePathVariable, variableTemplate, oVariablesLoad);
+
+                if(soapFileUserCheck == false)
+                    checkSoap = replaceByFile(oFile.filePathSoap, soapui_template, oVariablesLoad);
+
+                if(tnsFileCheck == false)
+                    checkTsn = replaceByFile(oFile.filePathTsn, tnsnames_template, oVariablesLoad);
 
                 
             }
@@ -163,7 +176,7 @@ namespace FillConfigurationDockerBSCS
             }
 
 
-            if (checkVariable && checkSoap && checkTsn)
+            if (checkVariable || checkSoap || checkTsn)
             {
                 return true;
             }

@@ -1,0 +1,33 @@
+<dbName> = 
+(DESCRIPTION=
+  (SDU=8192)
+  (ADDRESS_LIST=
+      (ADDRESS=
+        (COMMUNITY=TCPCOM)
+        (PROTOCOL=TCP)
+        (Host=<dbHost>)
+        (Port=<dbPort>)
+      )
+  )
+  (CONNECT_DATA=
+     (SID=<dbName>)
+     (GLOBAL_NAME=<dbName>)
+  )
+)
+
+<dbName>.world = 
+(DESCRIPTION=
+  (SDU=8192)
+  (ADDRESS_LIST=
+      (ADDRESS=
+        (COMMUNITY=TCPCOM)
+        (PROTOCOL=TCP)
+        (Host=<dbHost>)
+        (Port=<dbPort>)
+      )
+  )
+  (CONNECT_DATA=
+     (SID=<dbName>)
+     (GLOBAL_NAME=<dbName>.world)
+  )
+)

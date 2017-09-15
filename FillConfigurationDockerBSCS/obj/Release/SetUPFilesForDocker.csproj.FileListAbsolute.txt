@@ -10,3 +10,4 @@ C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Relea
 C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\FillConfigurationDockerBSCS.application
 C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\FillConfigurationDockerBSCS.exe
 C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\FillConfigurationDockerBSCS.pdb
+C:\Projeto Ericsson\dockerCoreloopEricsson\FillConfigurationDockerBSCS\obj\Release\SetUPFilesForDocker.csprojResolveAssemblyReference.cache

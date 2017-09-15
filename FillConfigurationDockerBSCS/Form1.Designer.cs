@@ -85,6 +85,9 @@
             this.linkCPX = new System.Windows.Forms.LinkLabel();
             this.linkAdmx = new System.Windows.Forms.LinkLabel();
             this.linkWex = new System.Windows.Forms.LinkLabel();
+            this.chkNotUsed = new System.Windows.Forms.CheckBox();
+            this.chkTns = new System.Windows.Forms.CheckBox();
+            this.chkSoap = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -98,7 +101,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(16, 55);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(849, 23);
+            this.textBox1.Size = new System.Drawing.Size(748, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "C:\\Data\\gitViews\\fullstack\\GIT_main\\lhsj_main\\bscs\\tests\\robotScripts\\src\\main\\te" +
     "stcases\\variables.py";
@@ -121,9 +124,9 @@
             // btnTsnName
             // 
             this.btnTsnName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTsnName.Location = new System.Drawing.Point(884, 111);
+            this.btnTsnName.Location = new System.Drawing.Point(781, 110);
             this.btnTsnName.Name = "btnTsnName";
-            this.btnTsnName.Size = new System.Drawing.Size(199, 34);
+            this.btnTsnName.Size = new System.Drawing.Size(184, 34);
             this.btnTsnName.TabIndex = 5;
             this.btnTsnName.Text = "search file tnsname.ora";
             this.btnTsnName.UseVisualStyleBackColor = true;
@@ -145,7 +148,7 @@
             this.txtTnsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTnsName.Location = new System.Drawing.Point(16, 118);
             this.txtTnsName.Name = "txtTnsName";
-            this.txtTnsName.Size = new System.Drawing.Size(849, 23);
+            this.txtTnsName.Size = new System.Drawing.Size(748, 23);
             this.txtTnsName.TabIndex = 3;
             this.txtTnsName.Text = "C:\\Robot\\TNS_ADMIN\\tnsnames.ora";
             this.txtTnsName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -153,9 +156,9 @@
             // btnSoapUI
             // 
             this.btnSoapUI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSoapUI.Location = new System.Drawing.Point(884, 170);
+            this.btnSoapUI.Location = new System.Drawing.Point(781, 169);
             this.btnSoapUI.Name = "btnSoapUI";
-            this.btnSoapUI.Size = new System.Drawing.Size(199, 36);
+            this.btnSoapUI.Size = new System.Drawing.Size(184, 36);
             this.btnSoapUI.TabIndex = 8;
             this.btnSoapUI.Text = "search file soapui";
             this.btnSoapUI.UseVisualStyleBackColor = true;
@@ -176,13 +179,16 @@
             this.txtSoapUi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoapUi.Location = new System.Drawing.Point(16, 178);
             this.txtSoapUi.Name = "txtSoapUi";
-            this.txtSoapUi.Size = new System.Drawing.Size(849, 23);
+            this.txtSoapUi.Size = new System.Drawing.Size(748, 23);
             this.txtSoapUi.TabIndex = 6;
             this.txtSoapUi.Text = "H:\\SoapUI5\\bin\\soapui.properties";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.chkSoap);
+            this.groupBox1.Controls.Add(this.chkNotUsed);
+            this.groupBox1.Controls.Add(this.chkTns);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.btnSoapUI);
             this.groupBox1.Controls.Add(this.lblVariable);
@@ -204,9 +210,9 @@
             // btnVariable
             // 
             this.btnVariable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVariable.Location = new System.Drawing.Point(884, 52);
+            this.btnVariable.Location = new System.Drawing.Point(781, 51);
             this.btnVariable.Name = "btnVariable";
-            this.btnVariable.Size = new System.Drawing.Size(199, 37);
+            this.btnVariable.Size = new System.Drawing.Size(184, 37);
             this.btnVariable.TabIndex = 2;
             this.btnVariable.Text = "search file variable.py";
             this.btnVariable.UseVisualStyleBackColor = true;
@@ -692,6 +698,39 @@
             this.linkWex.Text = "Open WEX Web";
             this.linkWex.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWex_LinkClicked);
             // 
+            // chkNotUsed
+            // 
+            this.chkNotUsed.AutoSize = true;
+            this.chkNotUsed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkNotUsed.Location = new System.Drawing.Point(971, 55);
+            this.chkNotUsed.Name = "chkNotUsed";
+            this.chkNotUsed.Size = new System.Drawing.Size(92, 24);
+            this.chkNotUsed.TabIndex = 9;
+            this.chkNotUsed.Text = "Not used";
+            this.chkNotUsed.UseVisualStyleBackColor = true;
+            // 
+            // chkTns
+            // 
+            this.chkTns.AutoSize = true;
+            this.chkTns.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTns.Location = new System.Drawing.Point(971, 117);
+            this.chkTns.Name = "chkTns";
+            this.chkTns.Size = new System.Drawing.Size(92, 24);
+            this.chkTns.TabIndex = 10;
+            this.chkTns.Text = "Not used";
+            this.chkTns.UseVisualStyleBackColor = true;
+            // 
+            // chkSoap
+            // 
+            this.chkSoap.AutoSize = true;
+            this.chkSoap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoap.Location = new System.Drawing.Point(971, 178);
+            this.chkSoap.Name = "chkSoap";
+            this.chkSoap.Size = new System.Drawing.Size(92, 24);
+            this.chkSoap.TabIndex = 10;
+            this.chkSoap.Text = "Not used";
+            this.chkSoap.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -787,6 +826,9 @@
         private System.Windows.Forms.LinkLabel lnkCX;
         private System.Windows.Forms.LinkLabel linkWex;
         private System.Windows.Forms.LinkLabel linkAdmx;
+        private System.Windows.Forms.CheckBox chkNotUsed;
+        private System.Windows.Forms.CheckBox chkTns;
+        private System.Windows.Forms.CheckBox chkSoap;
     }
 }
 
